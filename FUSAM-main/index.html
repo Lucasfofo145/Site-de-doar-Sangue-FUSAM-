@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FUSAM Sangue Bom - Plataforma de incentivo e organização da doação de sangue para o hospital FUSAM em Caçapava/SP.">
+  <meta name="theme-color" content="#0F2942">
+  <title>FUSAM Sangue Bom | Doação de Sangue em Caçapava</title>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Alerta de utilidade pública">
+    <div class="container top-bar-content">
+      <span class="pulse-indicator" aria-hidden="true"></span>
+      <p id="topBarAlertText"><strong>Atenção Caçapava:</strong> Estoques dos tipos <strong>O-</strong> e <strong>A-</strong> estão em nível crítico hoje.</p>
+      <a href="#estoque" class="top-bar-link">Ver painel &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Header / Navegação -->
+  <header class="main-header" id="topo">
+    <div class="container header-container">
+      <a href="#topo" class="brand-logo" aria-label="FUSAM Sangue Bom - Início">
+        <div class="logo-icon-wrapper" aria-hidden="true">
+          <svg class="drop-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#0F2942"/>
+            <path d="M18 6C18 6 10 14.5 10 20.5C10 24.9183 13.5817 28.5 18 28.5C22.4183 28.5 26 24.9183 26 20.5C26 14.5 18 6 18 6Z" fill="#D92525"/>
+            <path d="M18 16.5V23.5M14.5 20H21.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">FUSAM <span class="highlight-red">Sangue Bom</span></span>
+          <span class="brand-subtitle">Hospital Municipal de Caçapava • SUS / Prefeitura</span>
+        </div>
+      </a>
+
+      <!-- Menu de Navegação Desktop & Mobile -->
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#estoque" class="nav-link">Estoque de Sangue</a></li>
+          <li><a href="#simulador" class="nav-link">Posso Doar?</a></li>
+          <li><a href="#cadastro" class="nav-link">Seja Doador</a></li>
+          <li><a href="#informacoes" class="nav-link">Orientações & Horários</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#simulador" class="btn btn-primary btn-sm header-cta">Teste de Aptidão</a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menu de navegação">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="badge-dot"></span> Campanha Permanente de Doação
+          </div>
+          <h1 class="hero-title">
+            Seu sangue salva vidas em <span class="text-accent">Caçapava</span>
+          </h1>
+          <p class="hero-description">
+            O abastecimento contínuo do banco de sangue é vital para manter os atendimentos de urgência, cirurgias complexas, partos e UTIs do hospital FUSAM. Uma única doação sua leva menos de 40 minutos e pode salvar até quatro pessoas.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#simulador" class="btn btn-primary btn-lg smooth-scroll-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Verificar se posso doar
+            </a>
+            <a href="#estoque" class="btn btn-outline btn-lg smooth-scroll-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              Ver estoque crítico
+            </a>
+          </div>
+
+          <!-- Mini cards de estatísticas rápidas -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-num">4</span>
+              <span class="stat-label">Vidas salvas por cada bolsa de sangue</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-card">
+              <span class="stat-num">450ml</span>
+              <span class="stat-label">Volume seguro reposto rapidamente pelo corpo</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-card">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Material descartável e processo seguro</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-highlight">
+            <div class="pulse-ring"></div>
+            <div class="hero-blood-bag">
+              <svg viewBox="0 0 120 160" class="svg-blood-bag" aria-hidden="true">
+                <!-- Tubo superior -->
+                <path d="M60 0 V25" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round"/>
+                <!-- Corpo da Bolsa -->
+                <rect x="15" y="25" width="90" height="125" rx="18" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="4"/>
+                <!-- Nível de Sangue Animado -->
+                <clipPath id="bloodClip">
+                  <rect x="19" y="55" width="82" height="91" rx="14" />
+                </clipPath>
+                <g clip-path="url(#bloodClip)">
+                  <rect x="19" y="55" width="82" height="91" fill="#D92525" class="liquid-fill"/>
+                  <path d="M19 75 Q40 65 60 75 T101 75 V150 H19 Z" fill="#B91C1C" opacity="0.6" class="liquid-wave"/>
+                </g>
+                <!-- Selo FUSAM -->
+                <circle cx="60" cy="95" r="22" fill="#FFFFFF" opacity="0.95"/>
+                <text x="60" y="93" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#0F2942">FUSAM</text>
+                <text x="60" y="105" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9" fill="#D92525">SANGUE BOM</text>
+                <!-- Escala lateral de dosagem -->
+                <line x1="25" y1="60" x2="35" y2="60" stroke="#FFFFFF" stroke-width="2"/>
+                <line x1="25" y1="80" x2="32" y2="80" stroke="#FFFFFF" stroke-width="1.5"/>
+                <line x1="25" y1="100" x2="35" y2="100" stroke="#FFFFFF" stroke-width="2"/>
+                <line x1="25" y1="120" x2="32" y2="120" stroke="#FFFFFF" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="hero-live-status">
+              <span class="status-indicator-live"></span>
+              <div>
+                <strong>Rede de Apoio Ativa</strong>
+                <p>Hospital FUSAM • Caçapava/SP</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Painel Visual de Estoque -->
+    <section class="section-stock" id="estoque">
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-header-text">
+            <span class="section-tag">Agência Transfusional FUSAM</span>
+            <h2 class="section-title">Painel de Estoque de Sangue</h2>
+            <p class="section-subtitle">
+              Acompanhe a quantidade de bolsas disponíveis e a situação dos 8 tipos sanguíneos no Hospital FUSAM.
+            </p>
+            <div class="stock-last-updated" id="stockLastUpdated">
+              <span class="status-dot-live"></span>
+              <span>Última atualização: <strong id="stockUpdatedTime">Hoje</strong></span>
+            </div>
+          </div>
+
+          <div class="stock-admin-action">
+            <button class="btn btn-outline-admin" id="btnOpenAdminModal" aria-haspopup="dialog" aria-expanded="false" title="Abrir painel administrativo da equipe FUSAM">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+              <span>Gestão do Estoque (Equipe FUSAM)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Legenda explicativa dos níveis -->
+        <div class="stock-legend">
+          <div class="legend-item legend-critical">
+            <span class="legend-color"></span>
+            <strong>Crítico (&le; 30%):</strong> Doação urgente necessária
+          </div>
+          <div class="legend-item legend-alert">
+            <span class="legend-color"></span>
+            <strong>Alerta (31% - 69%):</strong> Atenção, estoque baixo
+          </div>
+          <div class="legend-item legend-stable">
+            <span class="legend-color"></span>
+            <strong>Estável (&ge; 70%):</strong> Nível adequado
+          </div>
+        </div>
+
+        <!-- Grid com os 8 cards dos tipos sanguíneos -->
+        <div class="stock-grid" id="stockGrid" role="region" aria-label="Níveis atuais dos tipos sanguíneos">
+          <!-- Gerado dinamicamente pelo JavaScript com fallback acessível -->
+        </div>
+
+        <div class="stock-footer-banner">
+          <div class="stock-footer-icon" aria-hidden="true">💡</div>
+          <div class="stock-footer-text">
+            <strong>Você possui sangue O- ou A-?</strong>
+            <span>O tipo O- é o doador universal, fundamental em emergências do pronto-socorro quando não há tempo para tipagem prévia. Sua presença é insubstituível.</span>
+          </div>
+          <a href="#cadastro" class="btn btn-secondary btn-sm">Quero Doar Agora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Simulador Interativo de Aptidão (Wizard Inteligente) -->
+    <section class="section-quiz" id="simulador">
+      <div class="container">
+        <div class="quiz-wrapper">
+          <div class="quiz-header">
+            <span class="section-tag">Triagem Inteligente & Personalizada</span>
+            <h2 class="section-title">Simulador de Aptidão para Doação</h2>
+            <p class="section-subtitle">
+              Responda às etapas abaixo para receber sua avaliação instantânea, com cálculo de datas e emissão do seu Cartão Digital de Doador.
+            </p>
+          </div>
+
+          <!-- Card do Wizard do Simulador -->
+          <div class="quiz-card" id="quizContainer">
+            <!-- Barra de Progresso do Wizard -->
+            <div class="wizard-progress-header" aria-label="Progresso da avaliação">
+              <div class="wizard-progress-meta">
+                <span class="wizard-step-badge" id="wizardStepText">Passo 1 de 6</span>
+                <span class="wizard-step-name" id="wizardStepName">Idade do Doador</span>
+                <span class="wizard-step-percent" id="wizardPercentText">17%</span>
+              </div>
+              <div class="wizard-progress-track">
+                <div class="wizard-progress-fill" id="wizardProgressBar" style="width: 17%;"></div>
+              </div>
+            </div>
+
+            <!-- Corpo Dinâmico das Etapas (Wizard Steps) -->
+            <div class="wizard-content" id="wizardContent">
+
+              <!-- ETAPA 1: IDADE -->
+              <div class="wizard-step-panel active" id="stepPanel1" data-step="1">
+                <div class="step-intro">
+                  <div class="step-icon-badge" aria-hidden="true">🎂</div>
+                  <h3 class="step-title">Qual é a sua idade atual?</h3>
+                  <p class="step-desc">Normas do Ministério da Saúde e ANVISA: doação permitida entre 16 e 69 anos (menores de 18 com autorização formal; primeira doação até os 60 anos).</p>
+                </div>
+
+                <div class="wizard-input-group">
+                  <div class="number-input-wrapper">
+                    <input 
+                      type="number" 
+                      id="inputAge" 
+                      class="wizard-number-input" 
+                      placeholder="Ex: 26" 
+                      min="10" 
+                      max="110" 
+                      aria-label="Informe sua idade em anos"
+                    >
+                    <span class="unit-suffix">anos</span>
+                  </div>
+                  <!-- Feedback dinâmico em tempo real -->
+                  <div class="step-feedback" id="feedbackAge" style="display: none;"></div>
+                </div>
+              </div>
+
+              <!-- ETAPA 2: PESO -->
+              <div class="wizard-step-panel" id="stepPanel2" data-step="2">
+                <div class="step-intro">
+                  <div class="step-icon-badge" aria-hidden="true">⚖️</div>
+                  <h3 class="step-title">Qual é o seu peso corporal aproximado?</h3>
+                  <p class="step-desc">O peso mínimo protege a sua circulação e garante o volume ideal de coleta.</p>
+                </div>
+
+                <div class="wizard-input-group">
+                  <div class="number-input-wrapper">
+                    <input 
+                      type="number" 
+                      id="inputWeight" 
+                      class="wizard-number-input" 
+                      placeholder="Ex: 68.5" 
+                      min="30" 
+                      max="220" 
+                      step="0.5" 
+                      aria-label="Informe seu peso em quilos"
+                    >
+                    <span class="unit-suffix">kg</span>
+                  </div>
+                  <!-- Feedback dinâmico em tempo real -->
+                  <div class="step-feedback" id="feedbackWeight" style="display: none;"></div>
+                </div>
+              </div>
+
+              <!-- ETAPA 3: GÊNERO E ÚLTIMA DOAÇÃO -->
+              <div class="wizard-step-panel" id="stepPanel3" data-step="3">
+                <div class="step-intro">
+                  <div class="step-icon-badge" aria-hidden="true">📅</div>
+                  <h3 class="step-title">Gênero Biológico e Histórico de Doações</h3>
+                  <p class="step-desc">O intervalo de recuperação biológica do ferro varia conforme o gênero biológico.</p>
+                </div>
+
+                <!-- Seleção de Gênero -->
+                <div class="wizard-sub-section">
+                  <label class="wizard-field-label">Selecione seu gênero biológico:</label>
+                  <div class="gender-selection-grid">
+                    <button type="button" class="btn-select-pill active" id="btnGenderM" data-gender="M">
+                      <span class="pill-icon">👨</span>
+                      <div class="pill-text">
+                        <strong>Masculino</strong>
+                        <span>Intervalo mín. de 60 dias (máx. 4x/ano)</span>
+                      </div>
+                    </button>
+                    <button type="button" class="btn-select-pill" id="btnGenderF" data-gender="F">
+                      <span class="pill-icon">👩</span>
+                      <div class="pill-text">
+                        <strong>Feminino</strong>
+                        <span>Intervalo mín. de 90 dias (máx. 3x/ano)</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Histórico de Doação -->
+                <div class="wizard-sub-section" style="margin-top: 1.5rem;">
+                  <label class="wizard-field-label">Você já doou sangue alguma vez?</label>
+                  <div class="donation-history-options">
+                    <button type="button" class="btn-toggle-option active" id="btnFirstTimeYes" data-first="true">
+                      <span>⭐ Primeira vez (Nunca doei sangue)</span>
+                    </button>
+                    <button type="button" class="btn-toggle-option" id="btnFirstTimeNo" data-first="false">
+                      <span>🩸 Já sou doador (Tenho doação anterior)</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Campo de Data da Última Doação (visível apenas se já doou) -->
+                <div class="last-donation-box" id="lastDonationContainer" style="display: none;">
+                  <label for="inputLastDonationDate" class="wizard-field-label">
+                    Data da sua última doação de sangue:
+                  </label>
+                  <input 
+                    type="date" 
+                    id="inputLastDonationDate" 
+                    class="wizard-date-input" 
+                    aria-label="Data da última doação"
+                  >
+                  <!-- Feedback de cálculo automático da data -->
+                  <div class="step-feedback" id="feedbackDonationInterval" style="display: none; margin-top: 0.75rem;"></div>
+                </div>
+              </div>
+
+              <!-- ETAPA 4: CONDIÇÕES DE SAÚDE -->
+              <div class="wizard-step-panel" id="stepPanel4" data-step="4">
+                <div class="step-intro">
+                  <div class="step-icon-badge" aria-hidden="true">🩺</div>
+                  <h3 class="step-title">Condições de Saúde, Medicamentos e Procedimentos</h3>
+                  <p class="step-desc">Selecione quaisquer itens que se apliquem a você nos períodos indicados pelo Ministério da Saúde:</p>
+                </div>
+
+                <div class="health-conditions-list" id="healthConditionsList">
+                  <button type="button" class="health-chip" data-condition="flu">
+                    <span class="chip-status-check"></span>
+                    <span class="chip-emoji">🤒</span>
+                    <div class="chip-content">
+                      <strong>Gripe, resfriado, febre ou infecções nos últimos 7 a 14 dias</strong>
+                      <span>Demanda espera de 7 a 14 dias após o desaparecimento completo dos sintomas.</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="health-chip" data-condition="tattoo">
+                    <span class="chip-status-check"></span>
+                    <span class="chip-emoji">🎨</span>
+                    <div class="chip-content">
+                      <strong>Tatuagem, piercing ou maquiagem definitiva nos últimos 6 a 12 meses</strong>
+                      <span>Aguardar 12 meses (ou 6 meses se realizado em local com alvará sanitário comprovado).</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="health-chip" data-condition="meds">
+                    <span class="chip-status-check"></span>
+                    <span class="chip-emoji">💊</span>
+                    <div class="chip-content">
+                      <strong>Uso de medicamentos contínuos ou antibióticos recentes</strong>
+                      <span>Antibióticos exigem pausa de 7 a 14 dias; uso contínuo passa por avaliação na triagem presencial.</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="health-chip" data-condition="surgery">
+                    <span class="chip-status-check"></span>
+                    <span class="chip-emoji">🏥</span>
+                    <div class="chip-content">
+                      <strong>Cirurgias recentes ou exames invasivos (ex.: endoscopia) nos últimos 6 meses</strong>
+                      <span>Exames endoscópicos e cirurgias demandam período de carência de 6 meses (ou 12 meses para grandes portes).</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="health-chip chip-healthy active" data-condition="none">
+                    <span class="chip-status-check"></span>
+                    <span class="chip-emoji">✨</span>
+                    <div class="chip-content">
+                      <strong>Nenhuma das alternativas (Estou 100% saudável)</strong>
+                      <span>Não apresento sintomas, procedimentos ou uso de medicamentos impeditivos recentes.</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- ETAPA 5: VACINAÇÃO E HISTÓRICO DE VIAGENS -->
+              <div class="wizard-step-panel" id="stepPanel5" data-step="5">
+                <div class="step-intro">
+                  <div class="step-icon-badge" aria-hidden="true">💉</div>
+                  <h3 class="step-title">Vacinação Recente &amp; Viagens Endêmicas</h3>
+                  <p class="step-desc">Algumas vacinas e viagens para regiões endêmicas possuem intervalos temporários de segurança:</p>
+                </div>
+
+                <!-- Sub-seção Vacinação -->
+                <div class="wizard-sub-section">
+                  <label class="wizard-field-label">Recebeu alguma vacina recentemente?</label>
+                  <div class="health-conditions-list" id="vaccineOptionsList">
+                    <button type="button" class="health-chip chip-healthy active" data-vaccine="none">
+                      <span class="chip-status-check"></span>
+                      <span class="chip-emoji">✅</span>
+                      <div class="chip-content">
+                        <strong>Não tomei vacinas recentemente</strong>
+                        <span>Sem vacinação nas últimas 4 semanas.</span>
+                      </div>
+                    </button>
+                    <button type="button" class="health-chip" data-vaccine="48h">
+                      <span class="chip-status-check"></span>
+                      <span class="chip-emoji">💉</span>
+                      <div class="chip-content">
+                        <strong>Vacina da Gripe (Influenza) ou Coronavac nas últimas 48 horas</strong>
+                        <span>Exige intervalo mínimo de apenas 48 horas após a aplicação.</span>
+                      </div>
+                    </button>
+                    <button type="button" class="health-chip" data-vaccine="7d">
+                      <span class="chip-status-check"></span>
+                      <span class="chip-emoji">🛡️</span>
+                      <div class="chip-content">
+                        <strong>Outras vacinas COVID-19 (Pfizer, AstraZeneca, Janssen) nos últimos 7 dias</strong>
+                        <span>Exige aguardar 7 dias após cada dose.</span>
+                      </div>
+                    </button>
+                    <button type="button" class="health-chip" data-vaccine="28d">
+                      <span class="chip-status-check"></span>
+                      <span class="chip-emoji">🦠</span>
+                      <div class="chip-content">
+                        <strong>Vacina de vírus vivo atenuado (Febre Amarela, Tríplice Viral, Dengue) há menos de 4 semanas</strong>
+                        <span>Necessário aguardar 28 dias (4 semanas) após a imunização.</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Sub-seção Viagens Endêmicas -->
+                <div class="wizard-sub-section" style="margin-top: 1.5rem;">
+                  <label class="wizard-field-label">Viajou para áreas endêmicas (Malária, Febre Amarela ou surtos)?</label>
+                  <div class="health-conditions-list" id="travelOptionsList">
+                    <button type="button" class="health-chip chip-healthy active" data-travel="none">
+                      <span class="chip-status-check"></span>
+                      <span class="chip-emoji">🏡</span>
+                      <div class="chip-content">
+                        <strong>Não viajei para áreas de risco nos últimos 12 meses</strong>
+                        <span>Permaneci em áreas urbanas sem risco endêmico.</span>
+                      </div>
+                    </button>
+                    <button type="button" class="health-chip" data-travel="malaria">
+                      <span class="chip-status-check"></span>
+                      <span class="chip-emoji">🌴</span>
+                      <div class="chip-content">
+                        <strong>Região Amazônica ou área endêmica de Malária nos últimos 12 meses</strong>
+                        <span>Critério ANVISA/MS: inaptidão temporária de 12 meses após o retorno.</span>
+                      </div>
+                    </button>
+                    <button type="button" class="health-chip" data-travel="yellowfever">
+                      <span class="chip-status-check"></span>
+                      <span class="chip-emoji">🗺️</span>
+                      <div class="chip-content">
+                        <strong>Área com surto de Febre Amarela ou Dengue grave nos últimos 30 dias</strong>
+                        <span>Necessário aguardar 30 dias após o retorno para descartar infecção assintomática.</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ETAPA 6: PREPARAÇÃO PARA HOJE -->
+              <div class="wizard-step-panel" id="stepPanel6" data-step="6">
+                <div class="step-intro">
+                  <div class="step-icon-badge" aria-hidden="true">📋</div>
+                  <h3 class="step-title">Preparação e Hábitos para Hoje</h3>
+                  <p class="step-desc">Confirme se você está pronto para uma coleta tranquila e segura neste momento:</p>
+                </div>
+
+                <div class="daily-habits-grid">
+                  <div class="habit-item">
+                    <div class="habit-info">
+                      <strong>Dormiu no mínimo 6 horas na noite anterior?</strong>
+                      <span>O repouso é fundamental para evitar tonturas ou queda de pressão.</span>
+                    </div>
+                    <div class="habit-switch">
+                      <button type="button" class="btn-habit-choice active" id="habitSleepYes" data-habit="sleep" data-val="true">Sim</button>
+                      <button type="button" class="btn-habit-choice" id="habitSleepNo" data-habit="sleep" data-val="false">Não</button>
+                    </div>
+                  </div>
+
+                  <div class="habit-item">
+                    <div class="habit-info">
+                      <strong>Consumiu bebidas alcoólicas nas últimas 12 horas?</strong>
+                      <span>O álcool reduz a hidratação e inviabiliza o fracionamento do sangue.</span>
+                    </div>
+                    <div class="habit-switch">
+                      <button type="button" class="btn-habit-choice" id="habitAlcoholYes" data-habit="alcohol" data-val="true">Sim</button>
+                      <button type="button" class="btn-habit-choice active" id="habitAlcoholNo" data-habit="alcohol" data-val="false">Não</button>
+                    </div>
+                  </div>
+
+                  <div class="habit-item">
+                    <div class="habit-info">
+                      <strong>Alimentou-se e evitou comidas gordurosas nas últimas 4 horas?</strong>
+                      <span>Alimentos muito gordurosos deixam o plasma lipêmico e turvo.</span>
+                    </div>
+                    <div class="habit-switch">
+                      <button type="button" class="btn-habit-choice active" id="habitMealYes" data-habit="meal" data-val="true">Sim</button>
+                      <button type="button" class="btn-habit-choice" id="habitMealNo" data-habit="meal" data-val="false">Não</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Barra Inferior de Navegação do Wizard -->
+              <div class="wizard-nav-footer">
+                <button type="button" class="btn btn-ghost btn-wizard-prev" id="btnWizardPrev" style="visibility: hidden;">
+                  &larr; Voltar
+                </button>
+                <div class="wizard-nav-right">
+                  <button type="button" class="btn btn-primary btn-wizard-next" id="btnWizardNext">
+                    <span>Avançar</span> &rarr;
+                  </button>
+                </div>
+              </div>
+
+              <!-- Aviso Legal (Disclaimer) e Privacidade LGPD -->
+              <div class="clinical-disclaimer-box" role="note" aria-label="Aviso legal e privacidade">
+                <span class="disclaimer-icon" aria-hidden="true">⚖️</span>
+                <p>
+                  <strong>Aviso Legal:</strong> Este questionário online é uma <strong>triagem prévia e educativa</strong> baseada nas normas da ANVISA e do Ministério da Saúde. Ele <strong>não substitui a entrevista clínica presencial obrigatória</strong> no banco de sangue da FUSAM. Seus dados são confidenciais e processados apenas no seu navegador (LGPD).
+                </p>
+              </div>
+            </div>
+
+            <!-- RESULTADO PERSONALIZADO: CARTÃO DIGITAL DO DOADOR -->
+            <div class="wizard-result-wrapper" id="wizardResult" style="display: none;" aria-live="polite">
+              <!-- Injetado dinamicamente via script.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Cadastro de Doadores de Emergência & Informações -->
+    <section class="section-register" id="cadastro">
+      <div class="container">
+        <div class="register-layout">
+          <!-- Coluna da Esquerda: Formulário de Cadastro de Emergência -->
+          <div class="register-form-box">
+            <div class="form-header">
+              <div class="form-icon-circle" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="8.5" cy="7" r="4"></circle>
+                  <line x1="20" y1="8" x2="20" y2="14"></line>
+                  <line x1="23" y1="11" x2="17" y2="11"></line>
+                </svg>
+              </div>
+              <h2 class="section-title">Cadastro de Doadores de Emergência</h2>
+              <p class="form-description">
+                Faça parte da nossa lista prioritária de Caçapava. Quando o hospital FUSAM necessitar do seu tipo sanguíneo, nós entraremos em contato via WhatsApp.
+              </p>
+            </div>
+
+            <form id="emergencyDonorForm" class="donor-form" novalidate>
+              <!-- Campo: Nome Completo -->
+              <div class="form-group">
+                <label for="donorName" class="form-label">Nome Completo <span class="required">*</span></label>
+                <input 
+                  type="text" 
+                  id="donorName" 
+                  name="donorName" 
+                  class="form-control" 
+                  placeholder="Ex: Carlos Eduardo de Oliveira" 
+                  required 
+                  autocomplete="name"
+                >
+                <span class="field-error" id="errorDonorName">Por favor, informe seu nome completo.</span>
+              </div>
+
+              <!-- Campo: WhatsApp -->
+              <div class="form-group">
+                <label for="donorPhone" class="form-label">WhatsApp para Notificações <span class="required">*</span></label>
+                <input 
+                  type="tel" 
+                  id="donorPhone" 
+                  name="donorPhone" 
+                  class="form-control" 
+                  placeholder="(12) 98765-4321" 
+                  maxlength="15" 
+                  required 
+                  autocomplete="tel"
+                >
+                <span class="field-help">Avisaremos apenas em casos de real necessidade ou estoque crítico.</span>
+                <span class="field-error" id="errorDonorPhone">Informe um número de WhatsApp válido com DDD (Ex: 12).</span>
+              </div>
+
+              <!-- Linha dupla: Tipo Sanguíneo e Bairro -->
+              <div class="form-row">
+                <!-- Tipo Sanguíneo -->
+                <div class="form-group col-half">
+                  <label for="donorBloodType" class="form-label">Tipo Sanguíneo <span class="required">*</span></label>
+                  <select id="donorBloodType" name="donorBloodType" class="form-control" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="O+">O+ (Positivo)</option>
+                    <option value="O-">O- (Negativo - Crítico)</option>
+                    <option value="A+">A+ (Positivo)</option>
+                    <option value="A-">A- (Negativo - Crítico)</option>
+                    <option value="B+">B+ (Positivo)</option>
+                    <option value="B-">B- (Negativo)</option>
+                    <option value="AB+">AB+ (Positivo)</option>
+                    <option value="AB-">AB- (Negativo)</option>
+                    <option value="NAO_SEI">Não sei meu tipo</option>
+                  </select>
+                  <span class="field-error" id="errorDonorBloodType">Selecione uma opção.</span>
+                </div>
+
+                <!-- Bairro de Caçapava -->
+                <div class="form-group col-half">
+                  <label for="donorNeighborhood" class="form-label">Bairro em Caçapava <span class="required">*</span></label>
+                  <select id="donorNeighborhood" name="donorNeighborhood" class="form-control" required>
+                    <option value="" disabled selected>Selecione seu bairro...</option>
+                    <option value="Centro">Centro</option>
+                    <option value="Vera Cruz">Vera Cruz</option>
+                    <option value="Vila Menino Jesus">Vila Menino Jesus</option>
+                    <option value="Parque Residencial Eldorado">Parque Res. Eldorado</option>
+                    <option value="Jardim Maria Cândida">Jardim Maria Cândida</option>
+                    <option value="Vila Santos">Vila Santos</option>
+                    <option value="Aldeias da Serra">Aldeias da Serra</option>
+                    <option value="Piedade">Piedade</option>
+                    <option value="Pinus do Iriguassu">Pinus do Iriguassu</option>
+                    <option value="Borda da Mata">Borda da Mata</option>
+                    <option value="Jardim Primavera">Jardim Primavera</option>
+                    <option value="Residencial Santo Antônio">Residencial Santo Antônio</option>
+                    <option value="Vila Paraíso">Vila Paraíso</option>
+                    <option value="Caçapava Velha">Caçapava Velha</option>
+                    <option value="Outro Bairro">Outro Bairro / Região</option>
+                  </select>
+                  <span class="field-error" id="errorDonorNeighborhood">Selecione o seu bairro.</span>
+                </div>
+              </div>
+
+              <!-- Termos / Consentimento LGPD -->
+              <div class="form-group form-check">
+                <input type="checkbox" id="donorConsent" name="donorConsent" class="form-check-input" required checked>
+                <label for="donorConsent" class="form-check-label">
+                  Autorizo o envio de alertas emergenciais da FUSAM quando meu tipo de sangue for requisitado e concordo com a <a href="#privacidade" class="inline-policy-link" data-open-policy="privacy">Política de Privacidade</a> e <a href="#termos" class="inline-policy-link" data-open-policy="terms">Termos de Uso</a> (LGPD).
+                </label>
+              </div>
+
+              <div class="lgpd-security-note">
+                <span aria-hidden="true">🔒</span>
+                <span>Ambiente seguro: dados armazenados localmente com sigilo e em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</span>
+              </div>
+
+              <!-- Botão de Envio -->
+              <button type="submit" class="btn btn-primary btn-block btn-submit" id="btnSubmitForm">
+                <span class="btn-label">Confirmar Cadastro de Solidariedade</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </form>
+
+            <!-- Card de Confirmação Visual (Exibido após envio com sucesso) -->
+            <div class="success-card" id="formSuccessCard" style="display: none;" aria-live="polite">
+              <div class="success-icon-badge" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="success-title">Cadastro Realizado com Sucesso!</h3>
+              <p class="success-message">
+                Obrigado, <strong id="registeredName">Doador</strong>! Seus dados foram registrados com segurança em nosso banco de emergência local.
+              </p>
+              
+              <div class="registered-details-box">
+                <div class="detail-line">
+                  <span>WhatsApp:</span> <strong id="registeredPhone">-</strong>
+                </div>
+                <div class="detail-line">
+                  <span>Tipo Sanguíneo:</span> <strong id="registeredBloodType" class="badge-blood">-</strong>
+                </div>
+                <div class="detail-line">
+                  <span>Bairro:</span> <strong id="registeredNeighborhood">-</strong>
+                </div>
+              </div>
+
+              <div class="success-actions">
+                <button type="button" class="btn btn-outline btn-sm" id="btnNewRegistration">
+                  Novo Cadastro
+                </button>
+                <button type="button" class="btn btn-ghost btn-sm" id="btnViewDonorsList">
+                  Ver Doadores Locais (<span id="totalDonorsCount">0</span>)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna da Direita: Orientações Básicas & Horários de Coleta -->
+          <div class="info-guidelines-box" id="informacoes">
+            <!-- Orientações Básicas -->
+            <div class="info-card">
+              <div class="info-header">
+                <div class="info-icon info-icon-shield" aria-hidden="true">📋</div>
+                <h3 class="info-title">Orientações Básicas para o Dia</h3>
+              </div>
+              <ul class="guidelines-list">
+                <li>
+                  <span class="icon-check">✓</span>
+                  <div>
+                    <strong>Documento com foto:</strong>
+                    <p>Leve RG, CNH, Carteira de Trabalho ou Passaporte original.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="icon-check">✓</span>
+                  <div>
+                    <strong>Alimentação saudável:</strong>
+                    <p>Esteja alimentado. Evite refeições gordurosas nas 3 horas que antecedem a doação. Nunca doe em jejum prolongado.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="icon-check">✓</span>
+                  <div>
+                    <strong>Descanso adequado:</strong>
+                    <p>Tenha dormido no mínimo 6 horas na noite anterior.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="icon-check">✓</span>
+                  <div>
+                    <strong>Evite álcool e cigarro:</strong>
+                    <p>Sem bebidas alcoólicas nas últimas 12 horas e sem fumar 2 horas antes da coleta.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Horários e Local de Coleta -->
+            <div class="info-card info-card-hospital">
+              <div class="info-header">
+                <div class="info-icon info-icon-clock" aria-hidden="true">🏥</div>
+                <div>
+                  <h3 class="info-title">Hospital FUSAM de Caçapava</h3>
+                  <p class="hospital-sub">Fundação Universitária de Saúde de Taubaté</p>
+                </div>
+              </div>
+
+              <div class="schedule-details">
+                <div class="schedule-row">
+                  <div class="schedule-label">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <strong>Horários de Atendimento & Coleta:</strong>
+                  </div>
+                  <p class="schedule-text">
+                    <strong>Segunda a Sexta-feira:</strong> das 07h30 às 13h00<br>
+                    <strong>Sábados (Campanhas Especiais):</strong> das 08h00 às 12h00
+                  </p>
+                </div>
+
+                <div class="schedule-row">
+                  <div class="schedule-label">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <strong>Endereço da Unidade:</strong>
+                  </div>
+                  <p class="schedule-text">
+                    Rua Doutor José de Moura Resende, 120<br>
+                    Vera Cruz - Caçapava/SP - CEP 12280-000
+                  </p>
+                </div>
+
+                <div class="schedule-row">
+                  <div class="schedule-label">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <strong>Telefone do Posto / Agendamento:</strong>
+                  </div>
+                  <p class="schedule-text">
+                    <a href="tel:1236542100" class="phone-link">(12) 3654-2100</a> / Ramal Agência Transfusional
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="36" height="36" rx="8" fill="#1E3A5F"/>
+            <path d="M18 6C18 6 10 14.5 10 20.5C10 24.9183 13.5817 28.5 18 28.5C22.4183 28.5 26 24.9183 26 20.5C26 14.5 18 6 18 6Z" fill="#D92525"/>
+            <path d="M18 16.5V23.5M14.5 20H21.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <span class="footer-logo-title">FUSAM <span class="highlight-red">Sangue Bom</span></span>
+            <span class="footer-logo-sub">Prefeitura Municipal de Caçapava • SUS</span>
+          </div>
+        </div>
+        <p class="footer-copy">
+          Plataforma oficial de apoio e incentivo à doação de sangue para o Hospital Municipal Dr. José de Moura Resende (FUSAM) em Caçapava/SP.
+        </p>
+
+        <!-- Selos Institucionais e Normas -->
+        <div class="footer-trust-seals" aria-label="Selos de conformidade e segurança">
+          <span class="trust-seal" title="Diretrizes clínicas baseadas na RDC nº 34/2014 da ANVISA e Portaria de Consolidação nº 5/2017 do Ministério da Saúde">
+            🏛️ Normas ANVISA &amp; Ministério da Saúde
+          </span>
+          <span class="trust-seal trust-seal-lgpd" title="Dados confidenciais tratados conforme a Lei nº 13.709/2018 (LGPD)">
+            🔒 Ambiente Seguro &amp; LGPD
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4 class="footer-links-title">Acesso Rápido</h4>
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#estoque">Painel do Estoque</a></li>
+          <li><a href="#simulador">Simulador de Aptidão</a></li>
+          <li><a href="#cadastro">Cadastro de Doador</a></li>
+          <li><a href="#informacoes">Orientações &amp; Horários</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4 class="footer-links-title">Hospital FUSAM Caçapava</h4>
+        <p><strong>Endereço:</strong> Rua Dr. José de Moura Resende, 120 - Vera Cruz, Caçapava/SP</p>
+        <p><strong>Telefone:</strong> <a href="tel:1236542100" style="color:#FFFFFF; text-decoration:underline;">(12) 3654-2100</a></p>
+        <p><strong>Coleta:</strong> Seg a Sex, 07h30 às 13h00</p>
+        <p style="margin-top:0.5rem;"><strong>Urgência/Emergência:</strong> Atendimento 24h</p>
+      </div>
+    </div>
+
+    <!-- Disclaimer Institucional no Rodapé -->
+    <div class="footer-disclaimer-bar">
+      <div class="container">
+        <p>
+          <strong>Nota Técnica e Legal:</strong> As informações e o simulador deste portal seguem as diretrizes da ANVISA (RDC 34/2014) e do Ministério da Saúde, tendo caráter exclusivamente orientativo e educativo. A aptidão definitiva depende sempre da triagem clínica presencial realizada por profissional habilitado na Agência Transfusional da FUSAM.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 FUSAM Sangue Bom - Hospital Municipal de Caçapava/SP.</p>
+        <div class="footer-legal-links">
+          <a href="#privacidade" data-open-policy="privacy">Política de Privacidade (LGPD)</a>
+          <span aria-hidden="true">•</span>
+          <a href="#termos" data-open-policy="terms">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Admin: Gestão do Estoque (Equipe FUSAM) -->
+  <div class="modal-backdrop" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle" style="display: none;">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="adminModalTitle">Gestão do Estoque de Sangue (Equipe FUSAM)</h3>
+          <p class="modal-subtitle">Atualize manualmente a quantidade de bolsas armazenadas e o nível de alerta de cada tipagem em tempo real.</p>
+        </div>
+        <button class="modal-close" id="btnCloseAdminModal" aria-label="Fechar painel de gestão">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="admin-sliders-grid" id="adminSlidersContainer">
+          <!-- Os 8 controles de bolsas/níveis são gerados via JS -->
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost btn-sm" id="btnResetStockDefault">Restaurar Valores Padrão</button>
+        <button type="button" class="btn btn-primary btn-sm" id="btnApplyAdminModal">Publicar Atualização no Painel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Política de Privacidade & Termos de Uso (LGPD) -->
+  <div class="modal-backdrop" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle" style="display: none;">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="legalModalTitle">Política de Privacidade &amp; LGPD</h3>
+          <p class="modal-subtitle">Transparência, segurança e proteção de dados — Lei nº 13.709/2018</p>
+        </div>
+        <button class="modal-close" id="btnCloseLegalModal" aria-label="Fechar documento legal">&times;</button>
+      </div>
+      <div class="modal-body legal-modal-body" id="legalModalBody">
+        <!-- Conteúdo injetado dinamicamente via JS -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-sm" id="btnCloseLegalModalBottom">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Lista de Doadores Cadastrados (Demonstração Local) -->
+  <div class="modal-backdrop" id="donorsListModal" role="dialog" aria-modal="true" aria-labelledby="donorsListTitle" style="display: none;">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="donorsListTitle">Doadores de Emergência Cadastrados</h3>
+          <p class="modal-subtitle">Registros armazenados localmente no navegador (localStorage).</p>
+        </div>
+        <button class="modal-close" id="btnCloseDonorsModal" aria-label="Fechar lista de doadores">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive" id="donorsTableWrapper">
+          <table class="donors-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>WhatsApp</th>
+                <th>Tipo</th>
+                <th>Bairro</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody id="donorsTableBody">
+              <!-- Renderizado dinamicamente -->
+            </tbody>
+          </table>
+        </div>
+        <div id="noDonorsMessage" class="empty-donors" style="display: none;">
+          Nenhum doador cadastrado ainda. Preencha o formulário para adicionar o primeiro voluntário!
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger btn-sm" id="btnClearDonorsList">Limpar Registros Locais</button>
+        <button type="button" class="btn btn-primary btn-sm" id="btnCloseDonorsListBottom">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="assertive"></div>
+
+  <!-- JavaScript Principal -->
+  <script src="script.js"></script>
+</body>
+</html>
+
